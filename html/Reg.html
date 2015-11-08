@@ -1,0 +1,178 @@
+<?php
+require_once('reg/config.php');
+$db = mysqli_connect(mysqli_HOST,mysqli_USER,mysqli_USER,mysqli_DATABASE);
+if ($db == 'error'){
+    echo 'error:db';
+    die();
+}
+// Запускаем сессию, если она еще не запущена
+if (!isset($_SESSION)){
+    session_start();
+}
+
+// Делаем проверку, авторизован ли пользователь
+if ($_SESSION['user_id']){
+    // Пользователь авторизован - выгоняем его со страницы
+    header("Location: ". URL ."homepage");
+    die();
+}
+?>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Вход в систему</title>
+	<link rel="stylesheet" href="css/reg.css">
+
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" media="all" href="css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+
+    <!-- JS -->
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+    <script src="js/jquery.columnizer.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="js/jquery.isotope.min.js"></script>
+
+    <!-- Lof slider -->
+    <script src="js/jquery.easing.js"></script>
+    <script src="js/lof-slider.js"></script>
+    <link rel="stylesheet" href="css/lof-slider.css" media="all"  />
+    <!-- ENDS slider -->
+
+    <!-- Tweet -->
+    <link rel="stylesheet" href="css/jquery.tweet.css" media="all"  />
+    <script src="js/tweet/jquery.tweet.js" ></script>
+    <!-- ENDS Tweet -->
+
+    <!-- superfish -->
+    <link rel="stylesheet" media="screen" href="css/superfish.css" />
+    <script  src="js/superfish-1.4.8/js/hoverIntent.js"></script>
+    <script  src="js/superfish-1.4.8/js/superfish.js"></script>
+    <script  src="js/superfish-1.4.8/js/supersubs.js"></script>
+    <!-- ENDS superfish -->
+
+    <!-- prettyPhoto -->
+    <script  src="js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+    <link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css"  media="screen" />
+    <!-- ENDS prettyPhoto -->
+
+    <!-- poshytip -->
+    <link rel="stylesheet" href="js/poshytip-1.1/src/tip-twitter/tip-twitter.css"  />
+    <link rel="stylesheet" href="js/poshytip-1.1/src/tip-yellowsimple/tip-yellowsimple.css"  />
+    <script  src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+    <!-- ENDS poshytip -->
+
+    <!-- JCarousel -->
+    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <link rel="stylesheet" media="screen" href="css/carousel.css" />
+    <!-- ENDS JCarousel -->
+
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+
+    <!-- modernizr -->
+    <script src="js/modernizr.js"></script>
+
+    <!-- SKIN -->
+    <link rel="stylesheet" media="all" href="css/skin.css"/>
+
+    <!-- Less framework -->
+    <link rel="stylesheet" media="all" href="css/lessframework.css"/>
+
+    <!-- flexslider -->
+    <link rel="stylesheet" href="css/flexslider.css" >
+    <script src="js/jquery.flexslider.js"></script>
+
+    <!-- REGISTRATION -->
+    <script src="reg_system/script.js"></script>
+
+    <!-- HEADER -->
+      <header>
+
+
+
+
+
+        <div class="wrapper cf">
+
+
+
+            <!-- nav -->
+
+            <ul id="nav" class="sf-menu">
+                <li><a href="index.html"><h3>Arma</h3></a></li>
+                <li><a href="blog.html"><h3>DayZ</h3></a></li>
+                <li><a href="page.html"><h3>Lineage</h3></a></li>
+                <li><a href="portfolio.html"><h3>Samp</h3></a></li>
+                <li><a href="contact.html"><h3>CS</h3></a></li>
+
+            </ul>
+            <div id="combo-holder"></div>
+
+            <!-- ends nav -->
+
+        </div>
+
+
+
+
+      </header>
+    <!-- ENDS HEADER -->
+</head>
+<body>
+
+
+
+<!-- ФОРМА РЕГИСТРАЦИИ -->
+<!-- <div id="errorMessage" style="display: none"><span id="errorMessageText"></span></div>
+<form id="reg_form" name="regForm" action="javascript:registration()" >
+    <label for="login">Имя пользователя</label>
+    <input id="login" name="login" type="text" />
+    <label for="password">Пароль</label>
+    <input id="password" name="password" type="password" />
+    <label for="email">Email</label>
+    <input id="email" name="email" type="text" />
+    <button type="submit">Зарегистрироваться</button>
+</form>
+ -->
+
+<!--Regestration Form-->
+
+<section class = "Container">
+
+<div class = "Regestration">
+<h1> Sign Up</h1>
+<form id = "regForm" action = '' method = 'post'>
+<p>
+<input id = "Login" type = "text" placeholder = "Login"/>
+</p>
+<p>
+<input id = "Password" type = "text" placeholder = "Password"
+</p>
+<p>
+<input id = "Email" type = "text" placeholder = "Email"/>
+</p>
+<p id = "submitArea">
+<input id = "submitButton" type = "text" value = "Go on!"/>
+</p>
+</form>
+</div>
+</section>
+
+</body>
+</html>
