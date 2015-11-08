@@ -1,0 +1,136 @@
+.bdrform_tabl {
+    background-color: whiteSmoke;
+    padding: 14px 16px 16px 18px;
+    border: 1px solid #DFDFDF;
+    border-radius: 10px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+
+
+.zvzd {
+    padding-right: 5px;
+    font: 22px Arial,Helvetica;
+    color: #D30B15;
+}
+
+table#bdr_w td.bt1 {
+    border-top: 1px solid
+    white;
+}
+
+table#bdr_w td {
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+
+.formreg td {
+    height: 35px;
+    padding: 0 4px 6px 0;
+}
+
+
+
+#messenger {
+
+    width: 90%;
+    margin: 5px 0px;
+    padding: 5px;
+    border: #F06 dotted 1px;
+    background: #F7CAE0;
+    border-radius: 7px;
+    display: none;
+
+}
+
+/*Reg Form Styling*/
+
+.Container{
+    margin:80px auto;
+    width:640px;
+}
+
+.Regestration{
+    position: relative;
+    margin: 150px auto 0px;
+    padding: 20px;
+    width: 310px;
+    background: #FFF none repeat scroll 0% 0%;
+    border-radius: 3px;
+    box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.Regestration h1{
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    text-shadow: 0px 1px #FFF;
+    background: #F3F3F3 none repeat scroll 0% 0%;
+    border-bottom: 1px solid #CFCFCF;
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0px 1px #F5F5F5;
+}
+
+#Login, #Password, #Email{
+    margin: 5px;
+    padding: 0px 10px;
+    width: 250px;
+    height: 34px;
+    color: #404040;
+    background: #FFF none repeat scroll 0% 0%;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-color: #C4C4C4;
+    border-radius: 1px;
+}
+
+/*check placehilder styling in the MS brousers, I worked form linux*/
+
+#Login:focus::-moz-placeholder, #Password:focus::-moz-placeholder,#Email:focus::-moz-placeholder{
+    color:transparent;
+}
+
+#Login:focus::-webkit-input-placeholder, #Password:focus::-webkit-input-placeholder,#Email:focus::-webkit-input-placeholder{
+    color:transparent;
+}
+
+#Login:focus, #Password:focus, #Email:focus{
+    border-width:2px;
+    border-style: solid;
+    border-color:#2B7219;
+}
+
+.Regestration p #submitButton{
+    text-align: left;
+    width:50px;
+}
+
+#submitButton{
+    padding: 0px 18px;
+    height: 29px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #527881;
+    text-shadow: 0px 1px #E3F1F1;
+    background: #CDE5EF linear-gradient(to bottom, #EDF5F8, #CDE5EF) repeat scroll 0% 0%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #B4CCCE;
+    box-sizing: content-box;
+}
+
+#submitButton:hover{
+    background: #EDF5F8 linear-gradient(to bottom, #CDE5EF, #EDF5F8) repeat scroll 0% 0%;
+}
